@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .hero-title {
-  @apply text-2xl text-center justify-center items-center font-bold my-10 py-5 italic;
+  @apply text-4xl text-center justify-center items-center font-bold my-10 py-5 italic;
 }
 
 .hero-main {
@@ -14,4 +14,20 @@
 
 .btn-link {
   @apply bg-pink-300 py-2.5 px-2.5 rounded-lg hover:bg-pink-500 transition-all duration-300 active:opacity-50 cursor-pointer;
+}
+
+.lesson1-ico {
+  @apply bg-pink-500 py-2 px-2 rounded mx-10 ;
+}
+
+.lesson1-prev, .lesson1-forward {
+  @apply  cursor-pointer active:opacity-50;
+}
+
+.lesson1-main {
+  @apply flex justify-center items-center gap-2.5 my-5 
+}
+
+.lesson1-title {
+  @apply text-4xl italic font-bold my-5 hover:underline hover:text-pink-500 transition-all duration-300 cursor-default;
 }
