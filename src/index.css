@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
+#root {
+  @apply bg-black text-white;
+}
+
 .hero-title {
   @apply text-4xl text-center justify-center items-center font-bold my-10 py-5 italic;
 }
 
 .hero-main {
-  @apply flex flex-col justify-center items-center bg-blue-200 
+  @apply flex flex-col justify-center items-center h-screen w-screen;
 }
 
 .hero-btn-con {
@@ -25,9 +29,30 @@
 }
 
 .lesson1-main {
-  @apply flex justify-center items-center gap-2.5 my-5 
+  @apply flex justify-center items-center gap-2.5 h-50 w-screen bg-black px-6;
 }
 
 .lesson1-title {
   @apply text-4xl italic font-bold my-5 hover:underline hover:text-pink-500 transition-all duration-300 cursor-default;
+}
+
+.lesson1 {
+  @apply bg-pink-950 text-white;
+}
+
+.titleName {
+  @apply flex justify-center items-center  text-3xl mt-20 font-semibold italic bg-pink-950 py-2.5 text-white;
+  @apply hover:cursor-pointer hover:bg-pink-500 hover:text-black transition-all duration-300;
+}
+
+.titlebody {
+  @apply px-20 pb-30;
+}
+.titlenum {
+  @apply font-bold text-lg italic py-2.5;
+}
+
+.lesson1btn {
+  @apply bg-white text-black py-2.5 px-2.5 rounded-lg;
+  @apply hover:bg-black hover:text-white transition-all duration-300 cursor-pointer active:opacity-20;
 }
