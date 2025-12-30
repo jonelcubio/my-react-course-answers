@@ -13,11 +13,11 @@
 }
 
 .hero-btn-con {
-  @apply flex flex-row justify-center items-center gap-5 my-5 text-lg
+  @apply flex flex-row justify-center items-center gap-5 my-5 text-lg relative overflow-hidden;
 }
 
 .btn-link {
-  @apply bg-pink-300 py-2.5 px-2.5 rounded-lg hover:bg-pink-500 transition-all duration-300 active:opacity-50 cursor-pointer;
+  @apply bg-black py-2.5 px-2.5 rounded-lg hover:bg-gray-700 transition-all duration-300 active:opacity-50 cursor-pointer text-white font-semibold hover:rounded-full;
 }
 
 .lesson1-ico {
@@ -29,7 +29,7 @@
 }
 
 .lesson1-main {
-  @apply flex justify-center items-center gap-2.5 h-50 w-screen bg-black px-6;
+  @apply flex justify-center items-center gap-2.5 h-50 w-screen px-6 relative;
 }
 
 .lesson1-title {
@@ -37,12 +37,11 @@
 }
 
 .lesson1 {
-  @apply bg-pink-950 text-white;
+  @apply text-white relative;
 }
 
 .titleName {
-  @apply flex justify-center items-center  text-3xl mt-20 font-semibold italic bg-pink-950 py-2.5 text-white;
-  @apply hover:cursor-pointer hover:bg-pink-500 hover:text-black transition-all duration-300;
+  @apply flex justify-center items-center  text-3xl mt-20 font-semibold italic text-white;
 }
 
 .titlebody {
@@ -57,6 +56,15 @@
   @apply hover:bg-black hover:text-white transition-all duration-300 cursor-pointer active:opacity-20;
 }
 
-.hero-bg-style {
+.hero-bg-style, .flowing-style {
   @apply w-screen h-screen;
 }
+
+.flowing-style {
+  @apply py-5;
+}
+
+.truefocus {
+  @apply mt-[-400px];
+}
+
