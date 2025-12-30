@@ -9,7 +9,7 @@ export default function Hero() {
       sentence="My React Learning Progress"
       manualMode={false}
       blurAmount={5}
-      borderColor="red"
+      borderColor="pink"
       animationDuration={1}
       pauseBetweenAnimations={1}
       />

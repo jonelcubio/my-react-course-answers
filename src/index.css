@@ -13,7 +13,7 @@
 }
 
 .hero-btn-con {
-  @apply flex flex-row justify-center items-center gap-5 my-2.5 text-lg
+  @apply flex flex-row justify-center items-center gap-5 my-5 text-lg
 }
 
 .btn-link {
