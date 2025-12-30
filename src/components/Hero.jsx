@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
+import TrueFocus from "../reactBits/truefocus";
 export default function Hero() {
   return(
     <>
     <div className="hero-main">
-      <div className="hero-title">My React Learning Progress</div>
+      
+      <TrueFocus 
+      sentence="My React Learning Progress"
+      manualMode={false}
+      blurAmount={5}
+      borderColor="red"
+      animationDuration={1}
+      pauseBetweenAnimations={1}
+      />
 
       <div className="hero-btn-con">
         <Link to="/lesson1"><button className="btn-link">Lesson 1</button></Link>
