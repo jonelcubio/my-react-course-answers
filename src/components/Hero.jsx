@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import TrueFocus from "../reactBits/truefocus";
+import TrueFocus from "../reactBits/TrueFocus";
 import Beams from "../reactBits/Beams";
 
 export default function Hero() {
