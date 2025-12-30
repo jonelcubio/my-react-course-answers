@@ -56,3 +56,7 @@
   @apply bg-white text-black py-2.5 px-2.5 rounded-lg;
   @apply hover:bg-black hover:text-white transition-all duration-300 cursor-pointer active:opacity-20;
 }
+
+.hero-bg-style {
+  @apply w-screen h-screen;
+}
