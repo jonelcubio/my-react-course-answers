@@ -5,9 +5,9 @@ function FlowingMenu({
   items = [],
   speed = 15,
   textColor = '#fff',
-  bgColor = 'black',
-  marqueeBgColor = '#fff',
-  marqueeTextColor = '#060010',
+  bgColor = 'transparent',
+  marqueeBgColor = '#0d1b2a',
+  marqueeTextColor = '#fff',
   borderColor = '#fff'
 }) {
   return (
