@@ -37,7 +37,7 @@
 }
 
 .lesson1 {
-  @apply text-white relative;
+  @apply text-white relative text-center justify-center items-center;
 }
 
 .titleName {

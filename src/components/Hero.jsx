@@ -7,7 +7,7 @@ export default function Hero() {
 
   const demoItems = [
   { link: '/lesson1', text: 'Lesson 1', image: 'https://images.pexels.com/photos/1477166/pexels-photo-1477166.jpeg' },
-  { link: '/', text: 'Lesson 2', image: 'https://images.pexels.com/photos/235990/pexels-photo-235990.jpeg' },
+  { link: '/lesson2', text: 'Lesson 2', image: 'https://images.pexels.com/photos/235990/pexels-photo-235990.jpeg' },
   { link: '/', text: 'Lesson 3', image: 'https://images.pexels.com/photos/1042423/pexels-photo-1042423.jpeg' },
   { link: '/', text: 'Lesson 4', image: 'https://images.pexels.com/photos/1230157/pexels-photo-1230157.jpeg' },
   { link: '/', text: 'Lesson 5', image: 'https://images.pexels.com/photos/12267702/pexels-photo-12267702.jpeg' }

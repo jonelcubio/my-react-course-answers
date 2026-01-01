@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Lesson1 from './pages/Lesson1.jsx';
+import Lesson2 from './pages/Lesson2.jsx';
 
 export function App() {
   
@@ -11,6 +12,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lesson1" element={<Lesson1 />} />
+        <Route path="/lesson2" element={<Lesson2 />} />
       </Routes>
     </>
   )

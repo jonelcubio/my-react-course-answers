@@ -46,9 +46,7 @@ export default function Lesson1ans() {
          <button className="lesson1btn">Place your order</button>
       </div>
 
-        <br />
-        <br />
-      <p>Timestamp: continue on 40:01 on YT video</p>
+        
     </div>
   </main>
   </>
