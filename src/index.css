@@ -68,3 +68,23 @@
   @apply mt-[-400px];
 }
 
+.chatbot-chatinput {
+  @apply relative flex justify-center items-center gap-10 py-10;
+}
+
+.chatbot-input {
+  @apply bg-white w-100 py-2 text-black rounded-lg px-2.5 focus:outline-none;
+}
+
+.chatbot-btn {
+  @apply bg-pink-500 text-white rounded-lg px-5 py-2;
+  @apply cursor-pointer active:opacity-50;
+}
+
+.chat-message {
+  @apply relative flex items-center gap-5;
+}
+
+.chat-message-ico {
+  @apply w-12;
+}
