@@ -25,6 +25,8 @@ export default function Chatbot() {
       <ChatMessage message="How can I help you?" sender="robot" />
       <ChatMessage message="Can you get today's date?" sender="user"/>
       <ChatMessage message="Today's date is: 1/6/2026" sender="robot" />
+      
+      
     </>
   );
 }

@@ -37,7 +37,7 @@
 }
 
 .lesson1 {
-  @apply text-white relative text-center justify-center items-center;
+  @apply text-white relative text-center justify-center items-center pb-10;
 }
 
 .titleName {
@@ -87,4 +87,20 @@
 
 .chat-message-ico {
   @apply w-12;
+}
+
+.p-style {
+  @apply relative;
+}
+
+.l2-style {
+  @apply flex justify-center gap-2.5;
+}
+
+.l2-2c-input {
+  @apply focus:outline-none bg-white text-black rounded-lg px-2.5 py-2 w-50;
+}
+
+.l2-2c-input-con {
+  @apply flex flex-col justify-center items-center gap-1 pb-2.5;
 }
