@@ -68,7 +68,7 @@ export default function Lesson2ans() {
         <div className="titlenum">2h.</div>
         <div className="lessonbody">
           <div className="l2h-con">
-            <img src="https://i.imgur.com/fXdBYjg.png" alt="2h" className="l2h-img" />
+            <img src="https://i.imgur.com/AYH9fGX.png" alt="2h" className="l2h-img" />
           </div> 
         </div>
 

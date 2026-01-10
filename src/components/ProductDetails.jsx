@@ -6,7 +6,7 @@ export default function ProductDetails({productName, price, discountPrice, image
     </div>
     
     <p>{productName}</p>
-     {!discountPrice ? null : <del>Price:{price}</del>}
+     {!discountPrice ? <p>Price:{price}</p> : <del>Price:{price}</del>}
      {discountPrice && <p>Discount price:{discountPrice}</p>}
      <button className="lesson1btn">Add to cart</button>  
     </>
