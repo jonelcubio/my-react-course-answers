@@ -104,3 +104,15 @@
 .l2-2c-input-con {
   @apply flex flex-col justify-center items-center gap-1 pb-2.5;
 }
+
+.l2h-con {
+  @apply flex text-center items-center justify-center;
+}
+
+.product-details-con {
+  @apply flex flex-col justify-center items-center;
+}
+
+.product-img {
+  @apply w-50;
+}
