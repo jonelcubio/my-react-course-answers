@@ -116,3 +116,6 @@
 .product-img {
   @apply w-50;
 }
+.meow {
+  @apply relative
+}
