@@ -3,9 +3,7 @@ import {useState} from "react";
 import ChatMessage from "../chatbot-components/ChatMessage";
 export default function ChatMessages() {
 
-  // const {chatMessages, setChatMessages} = useState([]);
-
-  const array = useState ([{
+  const [chatMessages, setChatMessages] = useState([{
       message: "hello chatbot",
       sender: "user",
       id: "id1"
@@ -21,10 +19,13 @@ export default function ChatMessages() {
       message: "Today's date is: 1/6/2026",
       sender: "robot",
       id: "id4"
+
   }]);
 
-  const chatMessages = array[0];
-  const setChatMessages = array[1];
+ //const [chatMessages, setChatMessages] = array;
+
+  // const chatMessages = array[0];
+  // const setChatMessages = array[1];
 
 
     function sendMessage() {
@@ -36,7 +37,6 @@ export default function ChatMessages() {
           id: crypto.randomUUID() 
         }
        ]);
-
     }
 
   return(
