@@ -3,6 +3,7 @@ import {useState} from 'react';
 export default function Lesson3ans() {
 
   const [count, setCount] = useState(0);
+  const [name, setName] = useState('');
 
   function handleClick(event) {
    console.log('Clicked')
@@ -10,6 +11,11 @@ export default function Lesson3ans() {
 
   function handleCountClick() {
     setCount(count +1);
+  }
+
+  function handleResetClick(){
+    setCount(0);
+    setName('');
   }
 
   function BtnCounter() {
@@ -20,15 +26,23 @@ export default function Lesson3ans() {
     );
   }
 
+  function handleOnChange(event){
+    setName(event.target.value);
+  }
+
+  function handleExampleClick() {
+    setName('Jacob Marcus');
+  }
+
   return(
     <>
     <main className="lesson1">
       <div className="titleName">State,Event Handlers, Create the Chatbot Features</div>
       <div className="titlebody"></div>
 
-      <p>Continue with 2:21:40</p>
+      <p>Continue with 2:42:18</p>
        <div className="l2h-con">
-          <a href="https://youtu.be/TtPXvEcE11E?si=dwKCf5h35YU8iGI8&t=8500"><img src="https://i.imgur.com/G74qgTc.png" alt="2h" className="l2h-img" /></a>
+          <a href="https://youtu.be/TtPXvEcE11E?si=2KaSyoaJD2SNn5Q7&t=9738"><img src="https://i.imgur.com/4fKbVFA.png" alt="2h" className="l2h-img" /></a>
         </div> 
 
 
@@ -82,6 +96,39 @@ export default function Lesson3ans() {
         </div> 
        <p className='p-wrap'>Apparently, na-skip ko na ung exercise 3e dahil hindi na ako gumawa ng separte component for the btn counter, <br />at dahil dito ko na sya nilagay ay already nasa parent component na sya at naka-lift na ung state. </p>
 
+      <div className="titlenum">3f.</div>
+       <div className="l2h-con">
+          <img src="https://i.imgur.com/Q28PBFE.png" alt="2h" className="img-exe" />
+        </div> 
+
+        <BtnCounter />
+        <BtnCounter />
+
+        <button className="lesson1btn" onClick={handleResetClick}>Reset</button>
+
+
+        <div className="titlenum">3g.</div>
+       <div className="l2h-con">
+          <img src="https://i.imgur.com/aKzdoLm.png" alt="2h" className="img-exe" />
+        </div> 
+        <input type="text" placeholder='Type a name here' className='inputtype' onChange={handleOnChange}/>
+        <p>{name || 'Hello'}</p>
+        <div className="l2h-con">
+          <img src="https://i.imgur.com/04SZ4Ad.png" alt="2h" className="img-exe" />
+        </div> 
+        <div className="l2h-con">
+          <img src="https://i.imgur.com/zOEzSrn.png" alt="2h" className="img-exe" />
+        </div> 
+
+        <div className="titlenum">3h.</div>
+       <div className="l2h-con">
+          <img src="https://i.imgur.com/HhIAiDr.png" alt="2h" className="img-exe" />
+        </div> 
+        <input type="text" placeholder='Type a name here' className='inputtype' onChange={handleOnChange} value={name}/>
+        <button className="lesson1btn" onClick={handleResetClick}>Reset</button> 
+        <button className="lesson1btn" onClick={handleExampleClick}>Example</button> 
+        <p>{'Hello ' + name || 'Hello'}</p>
+        
     </main>
     </>
   );
