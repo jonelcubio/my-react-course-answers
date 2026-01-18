@@ -1,6 +1,7 @@
 import sendMessage from "../chatbot-components/ChatMessages";
 import {useState} from "react";
-export default function ChatInput() {
+
+export default function ChatInput({chatMessages, setChatMessages}) {
 
   const [inputText, setInputText] = useState("");
 
@@ -9,7 +10,30 @@ export default function ChatInput() {
   }
 
   function sendMessage() {
-    console.log(inputText);
+
+    const newChatMessages = [
+        ...chatMessages,
+        {
+          message: inputText,
+          sender: "user",
+          id: crypto.randomUUID() 
+        }
+       ]
+
+      setChatMessages(newChatMessages);
+
+       const response = Chatbot.getResponse(inputText);
+
+       setChatMessages([ 
+        ...newChatMessages,
+        {
+          message: response,
+          sender: "robot",
+          id: crypto.randomUUID() 
+        }
+       ]);
+
+       setInputText('');
   }
 
   const handleKeyDown = (event) => {
@@ -25,6 +49,7 @@ export default function ChatInput() {
       className="chatbot-input" 
       onChange={saveInputText}
       onKeyDown={handleKeyDown}
+      value={inputText}
       />
       
 

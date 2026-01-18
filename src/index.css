@@ -117,5 +117,9 @@
   @apply w-50;
 }
 .meow {
-  @apply relative
+  @apply relative;
+}
+
+.img-exe {
+  @apply w-150 py-5;
 }

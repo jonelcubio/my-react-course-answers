@@ -1,3 +1,4 @@
+import {useState} from "react";
 import Beams from "../reactBits/Beams";
 import ChatInput from "../chatbot-components/ChatInput";
 import ChatMessage from "../chatbot-components/ChatMessage";
@@ -5,7 +6,26 @@ import robot from "../assets/robot.png";
 import user from "../assets/user.png";
 import ChatMessages from "../chatbot-components/ChatMessages.jsx";
 export default function Chatbot() {
+
+    const [chatMessages, setChatMessages] = useState([{
+          message: "hello chatbot",
+          sender: "user",
+          id: "id1"
+        }, {
+          message: "How can I help you?",
+          sender: "robot",
+          id: "id2"
+        },  {
+          message: "Can you get today's date?",
+          sender: "user",
+          id: "id3"
+        }, {
+          message: "Today's date is: 1/6/2026",
+          sender: "robot",
+          id: "id4"
     
+      }]);
+
   return(
     <>
       <div className="hero-bg-style" style={{ position: 'absolute' }}>
@@ -22,8 +42,13 @@ export default function Chatbot() {
       </div>
 
 
-      <ChatInput />
-      <ChatMessages />
+      <ChatInput 
+        chatMessages={chatMessages}
+        setChatMessages={setChatMessages}
+      />
+      <ChatMessages 
+        chatMessages={chatMessages}
+      />
         
       
     </>
