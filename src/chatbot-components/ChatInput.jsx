@@ -1,15 +1,21 @@
 import sendMessage from "../chatbot-components/ChatMessages";
-import {useState} from "react";
+import React,{useState} from "react";
 
 export default function ChatInput({chatMessages, setChatMessages}) {
 
   const [inputText, setInputText] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   function saveInputText(event) {
     setInputText(event.target.value);
   }
 
-  function sendMessage() {
+  async function sendMessage() {
+    if (isLoading || inputText === '') {
+      return;
+    }
+
+    setIsLoading(true);
 
     const newChatMessages = [
         ...chatMessages,
@@ -22,7 +28,7 @@ export default function ChatInput({chatMessages, setChatMessages}) {
 
       setChatMessages(newChatMessages);
 
-       const response = Chatbot.getResponse(inputText);
+       const response = await Chatbot.getResponseAsync(inputText);
 
        setChatMessages([ 
         ...newChatMessages,
@@ -39,6 +45,8 @@ export default function ChatInput({chatMessages, setChatMessages}) {
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       sendMessage();
+    } else if (event.key === 'Escape') {
+      setInputText('');
     }
   }
 

@@ -28,6 +28,7 @@ export default function Chatbot() {
 
   return(
     <>
+    <div className="chatbot-main">
       <div className="hero-bg-style" style={{ position: 'absolute' }}>
         <Beams
           beamWidth={2}
@@ -49,6 +50,9 @@ export default function Chatbot() {
       <ChatMessages 
         chatMessages={chatMessages}
       />
+      
+    </div>
+      
         
       
     </>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 #root {
-  @apply bg-black text-white;
+  @apply bg-black text-white ;
 }
 
 .hero-title {
@@ -126,4 +126,8 @@
 
 .inputtype {
   @apply bg-white text-black px-2.5 outline-none rounded-lg
+}
+
+.chatbot-main {
+  @apply overflow-x-hidden;
 }
