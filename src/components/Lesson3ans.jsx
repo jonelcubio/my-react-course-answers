@@ -40,12 +40,6 @@ export default function Lesson3ans() {
       <div className="titleName">State,Event Handlers, Create the Chatbot Features</div>
       <div className="titlebody"></div>
 
-      <p>Continue with 2:42:18</p>
-       <div className="l2h-con">
-          <a href="https://youtu.be/TtPXvEcE11E?si=2KaSyoaJD2SNn5Q7&t=9738"><img src="https://i.imgur.com/4fKbVFA.png" alt="2h" className="l2h-img" /></a>
-        </div> 
-
-
        <div className="titlenum">3a.</div>
        <div className="l2h-con">
           <img src="https://i.imgur.com/9xBTl75.png" alt="2h" className="img-exe" />

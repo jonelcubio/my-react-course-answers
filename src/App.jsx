@@ -4,7 +4,7 @@ import Lesson1 from './pages/Lesson1.jsx';
 import Lesson2 from './pages/Lesson2.jsx';
 import Chatbot from './pages/Chatbot.jsx';
 import Lesson3 from './pages/Lesson3.jsx';
-
+import Lesson4 from './pages/Lesson4.jsx';
 export function App() {
   
 
@@ -17,6 +17,7 @@ export function App() {
         <Route path="/lesson2" element={<Lesson2 />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/lesson3" element={<Lesson3 />} />
+        <Route path="/lesson4" element={<Lesson4 />} />
       </Routes>
     </>
   )

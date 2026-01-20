@@ -26,7 +26,7 @@ export default function Lesson3() {
 
       <div className="lesson1-title">Lesson 3</div>
       
-     <Link to="/"><button className="lesson1-forward cursor-target" title='Lesson 3'><img src={forward} alt="Forward" className='lesson1-ico' /></button></Link>
+     <Link to="/lesson4"><button className="lesson1-forward cursor-target" title='Lesson 3'><img src={forward} alt="Forward" className='lesson1-ico' /></button></Link>
     
     </div>
 
