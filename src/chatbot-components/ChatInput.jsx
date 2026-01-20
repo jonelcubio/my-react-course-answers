@@ -40,6 +40,7 @@ export default function ChatInput({chatMessages, setChatMessages}) {
        ]);
 
        setInputText('');
+       setIsLoading(false); 
   }
 
   const handleKeyDown = (event) => {
@@ -51,6 +52,7 @@ export default function ChatInput({chatMessages, setChatMessages}) {
   }
 
   return(
+
     <div className="chatbot-chatinput">
       <input type="text" 
       placeholder="Send a message to Chatbot" 
@@ -60,7 +62,6 @@ export default function ChatInput({chatMessages, setChatMessages}) {
       value={inputText}
       />
       
-
       <button 
         className="chatbot-btn"
         onClick={sendMessage}

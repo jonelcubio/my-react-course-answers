@@ -69,11 +69,11 @@
 }
 
 .chatbot-chatinput {
-  @apply relative flex justify-center items-center gap-5 py-10;
+  @apply flex grow justify-center items-center gap-5 mb-5 fixed bottom-0 h-20 bg-black py-15;
 }
 
 .chatbot-input {
-  @apply bg-white w-100 py-2 text-black rounded-lg px-2.5 focus:outline-none;
+  @apply bg-white w-150 py-2 text-black rounded-lg px-2.5 focus:outline-none;
 }
 
 .chatbot-btn {
@@ -81,12 +81,19 @@
   @apply cursor-pointer active:opacity-50;
 }
 
-.chat-message {
-  @apply relative flex items-center gap-5;
+.chat-message, .chat-message-user, .chat-message-robot {
+  @apply relative flex items-center;
 }
 
+.chat-message-user {
+  @apply justify-end;
+}
+
+.chat-message-text {
+  @apply bg-gray-100 text-black py-3 px-3 rounded-lg mx-2.5 max-w-sm mt-5;
+}
 .chat-message-ico {
-  @apply w-12;
+  @apply w-11;
 }
 
 .p-style {
@@ -134,4 +141,16 @@
 
 .lesson4-text {
   @apply text-lg font-normal py-10 not-italic px-50;
+}
+
+.chatbot-con {
+  @apply max-w-2xl ml-auto mr-auto mt-0 mb-0 flex flex-col;
+}
+
+.chat-messages-con {
+  @apply flex flex-col grow overflow-scroll overflow-y-scroll;
+}
+
+.chatbot-main {
+  @apply overflow-x-hidden;
 }

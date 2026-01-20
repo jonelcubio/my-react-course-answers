@@ -42,19 +42,18 @@ export default function Chatbot() {
         />
       </div>
 
-
-      <ChatInput 
-        chatMessages={chatMessages}
-        setChatMessages={setChatMessages}
-      />
-      <ChatMessages 
-        chatMessages={chatMessages}
-      />
-      
-    </div>
-      
+      <div className="chatbot-con">
         
-      
+        <ChatMessages 
+          chatMessages={chatMessages}
+        />
+        
+        <ChatInput 
+          chatMessages={chatMessages}
+          setChatMessages={setChatMessages}
+        />
+      </div>
+   </div>
     </>
   );
 }
