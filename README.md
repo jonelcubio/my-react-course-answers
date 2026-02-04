@@ -7,3 +7,6 @@ This repo is a collection of my answers as I stated above.
 1. Vite
 2. React Router
 3. Tailwind Css
+
+## Languages for this repo
+<img src="https://i.imgur.com/suEe3s8.png" alt="Hero Page" width="500">
