@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from "react";
-import ChatMessage from "../chatbot-components/ChatMessage";
+import ChatMessage from "./ChatMessage.js";
 export default function ChatMessages({chatMessages}) {
 
   return(

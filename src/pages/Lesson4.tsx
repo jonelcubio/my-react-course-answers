@@ -1,8 +1,8 @@
 import back from '../assets/back.svg';
 import forward from '../assets/forward.svg';
 import { Link } from 'react-router-dom';
-import Beams from "../reactBits/Beams";
-import Lesson4ans from '../components/Lesson4ans';
+import Beams from "../reactBits/Beams.jsx";
+import Lesson4ans from '../components/Lesson4ans.js';
 export default function Lesson4() {
   return(
     <>

@@ -1,4 +1,4 @@
-import sendMessage from "../chatbot-components/ChatMessages";
+import sendMessage from "./ChatMessages.js";
 import React,{useState} from "react";
 
 export default function ChatInput({chatMessages, setChatMessages}) {

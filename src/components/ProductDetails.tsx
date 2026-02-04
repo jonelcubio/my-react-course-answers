@@ -1,4 +1,5 @@
-export default function ProductDetails({productName, price, discountPrice, imageSrc}) {
+export default function ProductDetails(props: any) {
+  const {productName, price, discountPrice, imageSrc} = props;
   return(
     <>
     <div className="product-details-con">

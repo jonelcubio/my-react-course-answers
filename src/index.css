@@ -154,3 +154,7 @@
 .chatbot-main {
   @apply overflow-x-hidden;
 }
+
+.hero-con {
+  @apply h-screen w-screen bg-black text-white;
+}

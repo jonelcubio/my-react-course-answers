@@ -1,8 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 
-const TrueFocus = ({
-  sentence = 'My React Learning Progress',
+interface TrueFocusProps {
+  sentence?: string;
+  separator?: string;
+  manualMode?: boolean;
+  blurAmount?: number;
+  borderColor?: string;
+  glowColor?: string;
+  animationDuration?: number;
+  pauseBetweenAnimations?: number;
+}
+
+interface FocusRect {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+const TrueFocus: React.FC<TrueFocusProps> = ({
+  sentence = 'True Focus',
   separator = ' ',
   manualMode = false,
   blurAmount = 5,
@@ -12,11 +30,11 @@ const TrueFocus = ({
   pauseBetweenAnimations = 1
 }) => {
   const words = sentence.split(separator);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [lastActiveIndex, setLastActiveIndex] = useState(null);
-  const containerRef = useRef(null);
-  const wordRefs = useRef([]);
-  const [focusRect, setFocusRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const [focusRect, setFocusRect] = useState<FocusRect>({ x: 0, y: 0, width: 0, height: 0 });
 
   useEffect(() => {
     if (!manualMode) {
@@ -36,7 +54,7 @@ const TrueFocus = ({
     if (!wordRefs.current[currentIndex] || !containerRef.current) return;
 
     const parentRect = containerRef.current.getBoundingClientRect();
-    const activeRect = wordRefs.current[currentIndex].getBoundingClientRect();
+    const activeRect = wordRefs.current[currentIndex]!.getBoundingClientRect();
 
     setFocusRect({
       x: activeRect.left - parentRect.left,
@@ -46,7 +64,7 @@ const TrueFocus = ({
     });
   }, [currentIndex, words.length]);
 
-  const handleMouseEnter = index => {
+  const handleMouseEnter = (index: number) => {
     if (manualMode) {
       setLastActiveIndex(index);
       setCurrentIndex(index);
@@ -55,7 +73,7 @@ const TrueFocus = ({
 
   const handleMouseLeave = () => {
     if (manualMode) {
-      setCurrentIndex(lastActiveIndex);
+      setCurrentIndex(lastActiveIndex!);
     }
   };
 
@@ -70,22 +88,24 @@ const TrueFocus = ({
         return (
           <span
             key={index}
-            ref={el => (wordRefs.current[index] = el)}
-            className="relative text-[3rem] font-black cursor-pointer"
-            style={{
-              filter: manualMode
-                ? isActive
-                  ? `blur(0px)`
-                  : `blur(${blurAmount}px)`
-                : isActive
-                  ? `blur(0px)`
-                  : `blur(${blurAmount}px)`,
-              '--border-color': borderColor,
-              '--glow-color': glowColor,
-              transition: `filter ${animationDuration}s ease`,
-              outline: 'none',
-              userSelect: 'none'
+            ref={el => {
+              wordRefs.current[index] = el;
             }}
+            className="relative text-[3rem] font-black cursor-pointer"
+            style={
+              {
+                filter: manualMode
+                  ? isActive
+                    ? `blur(0px)`
+                    : `blur(${blurAmount}px)`
+                  : isActive
+                    ? `blur(0px)`
+                    : `blur(${blurAmount}px)`,
+                transition: `filter ${animationDuration}s ease`,
+                outline: 'none',
+                userSelect: 'none'
+              } as React.CSSProperties
+            }
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
@@ -106,10 +126,12 @@ const TrueFocus = ({
         transition={{
           duration: animationDuration
         }}
-        style={{
-          '--border-color': borderColor,
-          '--glow-color': glowColor
-        }}
+        style={
+          {
+            '--border-color': borderColor,
+            '--glow-color': glowColor
+          } as React.CSSProperties
+        }
       >
         <span
           className="absolute w-4 h-4 border-[3px] rounded-[3px] top-[-10px] left-[-10px] border-r-0 border-b-0"

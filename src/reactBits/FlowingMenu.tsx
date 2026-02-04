@@ -1,15 +1,40 @@
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 
-function FlowingMenu({
+interface MenuItemData {
+  link: string;
+  text: string;
+  image: string;
+}
+
+interface FlowingMenuProps {
+  items?: MenuItemData[];
+  speed?: number;
+  textColor?: string;
+  bgColor?: string;
+  marqueeBgColor?: string;
+  marqueeTextColor?: string;
+  borderColor?: string;
+}
+
+interface MenuItemProps extends MenuItemData {
+  speed: number;
+  textColor: string;
+  marqueeBgColor: string;
+  marqueeTextColor: string;
+  borderColor: string;
+  isFirst: boolean;
+}
+
+const FlowingMenu: React.FC<FlowingMenuProps> = ({
   items = [],
   speed = 15,
   textColor = '#fff',
-  bgColor = 'transparent',
-  marqueeBgColor = '#0d1b2a',
-  marqueeTextColor = '#fff',
+  bgColor = '#060010',
+  marqueeBgColor = '#fff',
+  marqueeTextColor = '#060010',
   borderColor = '#fff'
-}) {
+}) => {
   return (
     <div className="w-full h-full overflow-hidden" style={{ backgroundColor: bgColor }}>
       <nav className="flex flex-col h-full m-0 p-0">
@@ -28,27 +53,37 @@ function FlowingMenu({
       </nav>
     </div>
   );
-}
+};
 
-function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marqueeTextColor, borderColor, isFirst }) {
-  const itemRef = useRef(null);
-  const marqueeRef = useRef(null);
-  const marqueeInnerRef = useRef(null);
-  const animationRef = useRef(null);
+const MenuItem: React.FC<MenuItemProps> = ({
+  link,
+  text,
+  image,
+  speed,
+  textColor,
+  marqueeBgColor,
+  marqueeTextColor,
+  borderColor,
+  isFirst
+}) => {
+  const itemRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const marqueeInnerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<gsap.core.Tween | null>(null);
   const [repetitions, setRepetitions] = useState(4);
 
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
-  const findClosestEdge = (mouseX, mouseY, width, height) => {
-    const topEdgeDist = (mouseX - width / 2) ** 2 + mouseY ** 2;
-    const bottomEdgeDist = (mouseX - width / 2) ** 2 + (mouseY - height) ** 2;
+  const findClosestEdge = (mouseX: number, mouseY: number, width: number, height: number): 'top' | 'bottom' => {
+    const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
+    const bottomEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY - height, 2);
     return topEdgeDist < bottomEdgeDist ? 'top' : 'bottom';
   };
 
   useEffect(() => {
     const calculateRepetitions = () => {
       if (!marqueeInnerRef.current) return;
-      const marqueeContent = marqueeInnerRef.current.querySelector('.marquee-part');
+      const marqueeContent = marqueeInnerRef.current.querySelector('.marquee-part') as HTMLElement;
       if (!marqueeContent) return;
       const contentWidth = marqueeContent.offsetWidth;
       const viewportWidth = window.innerWidth;
@@ -64,7 +99,7 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
   useEffect(() => {
     const setupMarquee = () => {
       if (!marqueeInnerRef.current) return;
-      const marqueeContent = marqueeInnerRef.current.querySelector('.marquee-part');
+      const marqueeContent = marqueeInnerRef.current.querySelector('.marquee-part') as HTMLElement;
       if (!marqueeContent) return;
       const contentWidth = marqueeContent.offsetWidth;
       if (contentWidth === 0) return;
@@ -90,7 +125,7 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
     };
   }, [text, image, repetitions, speed]);
 
-  const handleMouseEnter = ev => {
+  const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const edge = findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height);
@@ -102,7 +137,7 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
       .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
   };
 
-  const handleMouseLeave = ev => {
+  const handleMouseLeave = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const edge = findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height);
@@ -147,6 +182,6 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
       </div>
     </div>
   );
-}
+};
 
 export default FlowingMenu;

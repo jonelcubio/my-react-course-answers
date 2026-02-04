@@ -1,11 +1,11 @@
 import back from '../assets/back.svg';
 import forward from '../assets/forward.svg';
 import { Link } from 'react-router-dom';
-import Lesson1ans from '../components/Lesson1ans';
-import Beams from "../reactBits/Beams";
+import Lesson2ans from '../components/Lesson2ans.js';
+import Beams from "../reactBits/Beams.jsx";
 
 
-export default function Lesson1() {
+export default function Lesson2() {
   return(
     <>
     <div className="hero-bg-style" style={{ position: 'absolute' }}>
@@ -24,15 +24,15 @@ export default function Lesson1() {
     <div className="lesson1-main">
       
        
-      <Link to="/"><button className="lesson1-prev cursor-target" title='Home'><img src={back} alt="Previous" className='lesson1-ico' /></button></Link>
+      <Link to="/lesson1"><button className="lesson1-prev cursor-target" title='Lesson 1'><img src={back} alt="Previous" className='lesson1-ico' /></button></Link>
 
-      <div className="lesson1-title">Lesson 1</div>
+      <div className="lesson1-title">Lesson 2</div>
       
-     <Link to="/lesson2"><button className="lesson1-forward cursor-target" title='Lesson 2'><img src={forward} alt="Forward" className='lesson1-ico' /></button></Link>
+     <Link to="/lesson3"><button className="lesson1-forward cursor-target" title='Lesson 3'><img src={forward} alt="Forward" className='lesson1-ico' /></button></Link>
     
     </div>
 
-    <Lesson1ans />
+    <Lesson2ans />
     
     </>
   );

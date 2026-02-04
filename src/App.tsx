@@ -1,10 +1,10 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import Lesson1 from './pages/Lesson1.jsx';
-import Lesson2 from './pages/Lesson2.jsx';
-import Chatbot from './pages/Chatbot.jsx';
-import Lesson3 from './pages/Lesson3.jsx';
-import Lesson4 from './pages/Lesson4.jsx';
+import { Routes, Route } from 'react-router-dom';
+import Home from '../src/pages/Home.js'
+import Lesson1 from './pages/Lesson1.js';
+import Lesson2 from './pages/Lesson2.js';
+import Chatbot from './pages/Chatbot.js';
+import Lesson3 from './pages/Lesson3.js';
+import Lesson4 from './pages/Lesson4.js';
 export function App() {
   
 

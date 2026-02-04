@@ -2,7 +2,7 @@ import socks from "../assets/socks.png";
 import tennis from "../assets/tennis.png";
 import tshirt from "../assets/tshirt.png";
 
-import ProductDetails from "./ProductDetails";
+import ProductDetails from "./ProductDetails.js";
 export default function Lesson2ans() {
   return(
   <>

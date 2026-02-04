@@ -1,10 +1,10 @@
 import {useState} from "react";
-import Beams from "../reactBits/Beams";
-import ChatInput from "../chatbot-components/ChatInput";
-import ChatMessage from "../chatbot-components/ChatMessage";
+import Beams from "../reactBits/Beams.jsx";
+import ChatInput from "../chatbot-components/ChatInput.js";
+import ChatMessage from "../chatbot-components/ChatMessage.js";
 import robot from "../assets/robot.png";
 import user from "../assets/user.png";
-import ChatMessages from "../chatbot-components/ChatMessages.jsx";
+import ChatMessages from "../chatbot-components/ChatMessages.js";
 export default function Chatbot() {
 
     const [chatMessages, setChatMessages] = useState([{
