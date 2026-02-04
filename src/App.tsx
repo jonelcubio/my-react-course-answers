@@ -1,4 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+import '@mantine/core/styles.css'; 
+import { MantineProvider } from '@mantine/core';
+import SplashCursor from '../src/reactBits/SplashCursor';
 import Home from '../src/pages/Home.js'
 import Lesson1 from './pages/Lesson1.js';
 import Lesson2 from './pages/Lesson2.js';
@@ -10,7 +13,8 @@ export function App() {
 
   return (
     <>
-      
+      <SplashCursor />
+      <MantineProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lesson1" element={<Lesson1 />} />
@@ -19,6 +23,7 @@ export function App() {
         <Route path="/lesson3" element={<Lesson3 />} />
         <Route path="/lesson4" element={<Lesson4 />} />
       </Routes>
+      </MantineProvider>
     </>
   )
 }
