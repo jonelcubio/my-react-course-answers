@@ -168,16 +168,21 @@
 }
 
 .lessonbtn-con {
-  @apply border-white border-2 py-2.5 px-2.5 rounded-lg flex flex-col justify-center items-center gap-2.5;
+  @apply border-white border-2 py-2.5 px-2.5 rounded-lg flex flex-col justify-center items-center lg:gap-2.5 flex-wrap;
   @apply hover:bg-white hover:text-black transition-all duration-300 cursor-pointer active:opacity-50;
+  @apply md:bg-red-800 lg:bg-yellow-300 xl:bg-amber-900;
 }
 
 .lessonbtn-img {
-  @apply w-50 object-cover
+  @apply hidden md:block md:w-25; 
+  @apply lg:w-50 object-cover;
+  
 }
 
 .hero-mid-btn {
-  @apply flex flex-row justify-center items-center gap-2.5 shrink grow;
+  /*@apply flex flex-row justify-center items-center gap-2.5 shrink grow mb-10 flex-wrap; */
+  @apply grid grid-cols-1 md:grid-cols-5 gap-4 w-full max-w-4xl md:mb-15;
+
 }
 
 .lessonbtn-title {
